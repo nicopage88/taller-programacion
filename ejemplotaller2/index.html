@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploración Natural con QR</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>🌿 Exploración Natural con QR 🦢</h1>
+    
+    <section>
+        <h2>📢 Generar Código QR</h2>
+        <p>Escribe la URL de la página sobre un animal o planta:</p>
+        <input type="text" id="qr-text" placeholder="Ejemplo: pavoreal.html">
+        <button onclick="generarQR()">Generar QR</button>
+        <div id="qr-container">
+            <div id="qr-result"></div>
+            <button id="download-btn" style="display: none;" onclick="descargarQR()">📥 Descargar QR</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔍 Escanear un Código QR</h2>
+        <p>Apunta tu cámara a un código QR para ver la información.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

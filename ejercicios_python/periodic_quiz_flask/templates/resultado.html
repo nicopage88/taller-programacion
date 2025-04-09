@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado</title>
+</head>
+<body>
+    {% if correcto %}
+        <h2>¡Correcto, {{ nombre }}! ¡Buen trabajo!</h2>
+    {% else %}
+        <h2>Lo siento, {{ nombre }}. Se acabaron los intentos.</h2>
+        <p>La respuesta correcta era: {{ respuesta_correcta }}</p>
+    {% endif %}
+    <a href="{{ url_for('modo') }}">Volver a jugar</a><br>
+    <a href="{{ url_for('reiniciar') }}">Salir</a>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador y Escáner de QR</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/jsqr@1.3.1/dist/jsQR.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>🔍 Proyecto QR - Feria de Talleres</h1>
+
+    <section>
+        <h2>📢 Generar Código QR</h2>
+        <input type="text" id="qr-text" placeholder="Escribe tu mensaje secreto">
+        <button onclick="generarQR()">Generar QR</button>
+        <div id="qr-container">
+            <div id="qr-result"></div>
+            <button id="download-btn" style="display: none;" onclick="descargarQR()">📥 Descargar QR</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>📸 Escanear Código QR</h2>
+        <video id="video" width="300" height="200" autoplay></video>
+        <canvas id="canvas" hidden></canvas>
+        <button onclick="iniciarEscaneo()">🎥 Activar Cámara</button>
+        <p id="qr-output"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

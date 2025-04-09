@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Trivia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        #game-container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .option {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .correct {
+            background-color: green !important;
+        }
+        .incorrect {
+            background-color: red !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Juego de Trivia</h1>
+        <p id="question">Cargando pregunta...</p>
+        <div id="options"></div>
+        <p>Puntaje: <span id="score">0</span></p>
+        <p>Tiempo restante: <span id="timer">30</span> segundos</p>
+    </div>
+    
+    <script>
+        const questions = [
+            {
+                question: "¿Cuál es la capital de Francia?",
+                options: ["Madrid", "París", "Berlín", "Londres"],
+                answer: "París"
+            },
+            {
+                question: "¿Cuánto es 2 + 2?",
+                options: ["3", "4", "5", "6"],
+                answer: "4"
+            },
+            {
+                question: "¿Quién escribió 'Cien años de soledad'?",
+                options: ["Pablo Neruda", "Gabriel García Márquez", "Mario Vargas Llosa", "Julio Cortázar"],
+                answer: "Gabriel García Márquez"
+            }
+        ];
+        
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timeLeft = 30;
+        
+        function loadQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            document.getElementById('question').innerText = currentQuestion.question;
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            
+            currentQuestion.options.forEach(option => {
+                const button = document.createElement('button');
+                button.innerText = option;
+                button.classList.add('option');
+                button.onclick = () => checkAnswer(option, button);
+                optionsContainer.appendChild(button);
+            });
+        }
+        
+        function checkAnswer(selectedOption, button) {
+            const correctAnswer = questions[currentQuestionIndex].answer;
+            if (selectedOption === correctAnswer) {
+                button.classList.add('correct');
+                score++;
+            } else {
+                button.classList.add('incorrect');
+            }
+            document.getElementById('score').innerText = score;
+            setTimeout(() => {
+                if (currentQuestionIndex < questions.length - 1) {
+                    currentQuestionIndex++;
+                    loadQuestion();
+                } else {
+                    alert('Juego terminado! Puntuación: ' + score);
+                }
+            }, 1000);
+        }
+        
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            const interval = setInterval(() => {
+                timeLeft--;
+                timerElement.innerText = timeLeft;
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    alert('¡Tiempo agotado! Puntuación final: ' + score);
+                }
+            }, 1000);
+        }
+        
+        loadQuestion();
+        startTimer();
+    </script>
+</body>
+</html>

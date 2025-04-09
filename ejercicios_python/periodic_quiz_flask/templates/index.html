@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inicio - Laboratorio Químico</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bienvenido al Laboratorio de Química Interactiva</h1>
+    <form method="post">
+        <label for="nombre">Ingresa tu nombre (debe comenzar con Dr. o Dra.):</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <button type="submit">Comenzar</button>
+    </form>
+    {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+</body>
+</html>

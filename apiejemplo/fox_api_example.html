@@ -1,0 +1,74 @@
+
+    <html>
+    <head>
+        <title>Usando la API de RandomFox</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                margin: 20px;
+            }
+            h1 {
+                color: #ff6600;
+            }
+            p {
+                font-size: 16px;
+            }
+            .image-container {
+                text-align: center;
+                margin-top: 20px;
+            }
+            img {
+                max-width: 80%;
+                height: auto;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+            .code-example {
+                background-color: #f1f1f1;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-family: monospace;
+                margin-top: 20px;
+                white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Bienvenido a la API de RandomFox</h1>
+        <p>Esta es una imagen aleatoria de un zorro obtenida de la API de RandomFox. La API devuelve imágenes de zorros en formato JSON que puedes utilizar en tus aplicaciones.</p>
+        
+        <div class="image-container">
+            <h2>Imagen de un zorro:</h2>
+            <img src="https://randomfox.ca/images/44.jpg" alt="Zorro Aleatorio">
+        </div>
+
+        <h2>¿Cómo utilizar la API?</h2>
+        <p>La API de RandomFox permite obtener imágenes de zorros en diferentes formatos. Para usarla, debes realizar una solicitud HTTP y acceder a los datos JSON que te devuelven.</p>
+
+        <div class="code-example">
+            <strong>Código de ejemplo en Python:</strong>
+
+            <pre>
+import requests
+
+url = "https://randomfox.ca/floof/"
+
+response = requests.get(url)
+
+if response.status_code == 200:
+    data = response.json()
+    image_url = data['image']
+    print(f"Imagen de zorro: https://randomfox.ca/images/44.jpg")
+else:
+    print("Error al obtener la imagen.")
+            </pre>
+        </div>
+
+        <h2>Enlace para más información:</h2>
+        <p>Para obtener más imágenes de zorros, visita <a href="https://randomfox.ca/?i=44" target="_blank">este enlace</a>.</p>
+    </body>
+    </html>
+    

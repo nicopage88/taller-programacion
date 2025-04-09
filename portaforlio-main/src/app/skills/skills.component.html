@@ -1,0 +1,162 @@
+<div id="skills" class="container skillsContainer">
+  <div>
+    <h2><span>Habilidades</span></h2>
+  </div>
+
+  <div class="row switch-tab">
+    <div class="tab d-inline" [ngClass]="{ borderBottom: tab === 'languages' }" (click)="changedTab('languages')">
+      Languajes
+    </div>
+    <div class="tab d-inline" [ngClass]="{ borderBottom: tab === 'education' }" (click)="changedTab('education')">
+      Educación
+    </div>
+  </div>
+
+  <div class="languages" *ngIf="tab === 'languages'">
+    <div class="row">
+      <div class="col-md-4 mt-5" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
+        <div class="card cardSkills" id="Angular">
+          <div class="text-ms-center">
+            <img src="assets/images/angular.png" />
+          </div>
+          <h4>FrameWork de Angular</h4>
+          <div class="BorderB"></div>
+
+          <p class="mt-3">
+            Curso realizado en forma presencial en el año 2019, 24 horas
+            cronológicas en Programadores Chile.
+          </p>
+          <a href="https://www.credly.com/badges/fa8a549b-46b9-49f0-94ba-49a081e51db5/public_url" class="badge bg-dark"
+            target="_blank">Ver Medalla</a>
+        </div>
+      </div>
+      <div class="col-md-4 mt-5" data-aos="fade-up" data-aos-offset="150" data-aos-duration="1000">
+        <div class="card cardSkills" id="Android">
+          <div class="text-ms-center">
+            <img src="assets/images/javascript.png" />
+          </div>
+          <h4>Master en JavaScript</h4>
+          <div class="BorderB"></div>
+
+          <p class="mt-3">
+            Curso de lenguaje de programación JavaScript avanzado, certificado
+            por escalab.academy
+          </p>
+          <a href="https://www.credly.com/badges/106869a2-d23b-4c8f-a909-8ea2793ddaac/public_url" class="badge bg-dark"
+            target="_blank">Ver Medalla</a>
+        </div>
+      </div>
+      <div class="col-md-4 mt-5" data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
+        <div class="card cardSkills" id="Java">
+          <div class="text-ms-center">
+            <img src="assets/images/rn.png" />
+          </div>
+
+          <h4>React Native</h4>
+          <div class="BorderB"></div>
+
+          <p class="mt-3">
+            Mobile App Developer en React Native, certificado por
+            escalab.academy
+          </p>
+          <a href="https://www.credly.com/badges/121a4e5e-216e-45cc-8ca9-3f1f6f41861a/public_url" class="badge bg-dark"
+            target="_blank">Ver Medalla</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 my-5" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
+        <div class="card cardSkills" id="Spark">
+          <div class="text-ms-center">
+            <img src="assets/images/laravel.png" />
+          </div>
+          <h4>Framework de Laravel</h4>
+
+          <div class="BorderB"></div>
+
+          <p class="mt-2">
+            Es uno de los frameworks de código abierto más fáciles de asimilar
+            para PHP.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 my-5" data-aos="fade-up" data-aos-offset="150" data-aos-duration="1000">
+        <div class="card cardSkills" id="html">
+          <div class="row html">
+            <div class="col-6 col-md-6" id="HTML">
+              <img src="assets/images/html.png" />
+              <h4>HTML5</h4>
+
+              <div style="text-align: center;">
+                <div class="BorderB"></div>
+              </div>
+            </div>
+            <div class="col-6 col-md-6" id="CSS">
+              <img src="assets/images/css.png" />
+              <h4>CSS3</h4>
+
+              <div class="BorderB"></div>
+            </div>
+          </div>
+          <p class="mt-3">
+            HTML5 Estructura de etiquetado nivel alto junto a CSS3 y JavaScript
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 my-5" data-aos="fade-up" data-aos-offset="200" data-aos-duration="1000">
+        <div class="card cardSkills" id="IDE">
+          <div class="text-ms-center">
+            <img src="assets/images/maintenance.png" />
+          </div>
+          <h4>Dev-Ops</h4>
+          <div class="BorderB"></div>
+
+          <p class="mt-3">
+            Dockers + Kubernetes despliegue de aplicaciones en contenedores.
+            Finalizado el 6 octubre del año 2021
+          </p>
+          <a href="https://www.credly.com/badges/6751e6ae-2eb5-4824-8e8b-fe7f6692c34c/public_url" class="badge bg-dark"
+            target="_blank">Ver Medalla</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="education" *ngIf="tab === 'education'">
+    <div class="row" data-aos="fade-up" data-aos-offset="100" data-aos-duration="1000">
+      <div class="col-sm-12 col-md-6">
+        <h4><a href="https://ciisa.cl/">Instituto Profesional CIISA</a></h4>
+        <p>Marzo de 2017 - Abril de 2021</p>
+
+        <div class="row mb-2 pl-2">
+          <span><i class="fas fa-certificate"></i></span>
+          <a class="pt-1" href="https://nicolabs.cl/cv/certificado_ing.pdf" target="_blank">Certificado de titulación en
+            Ingeniería en Informática
+          </a>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <h4><a href="https://www.cftingraf.cl/">INGRAF</a></h4>
+
+        <p>Febrero de 2010 - Diciembre de 2013</p>
+
+        <div class="row pl-2">
+          <span><i class="fas fa-certificate"></i></span>
+          <p class="pt-1">Gestión y Administración de medios Gráficos</p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <h4><a href="https://koe.cl/" target="_blank">Koe</a></h4>
+        <p>Enero de 2015 - Diciembre de 2015</p>
+
+        <div class="row mb-2 pl-2">
+          <span><i class="fas fa-certificate"></i></span>
+          <a href="https://nicolabs.cl/cv/Diploma KOE.jpg" class="pt-1" target="_blank">
+            Certificado de inglés intermedio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+body {
+    background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.card {
+    width: 50%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.list-group-item {
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+}
+
+.facts-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.fact-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.fact-card:hover {
+    transform: scale(1.05);
+}
+
+.btn-success {
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}

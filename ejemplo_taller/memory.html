@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            text-align: center;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            gap: 10px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+        .card {
+            width: 100px;
+            height: 100px;
+            background-color: #007bff;
+            color: white;
+            font-size: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        .flipped {
+            background-color: #fff;
+            color: #000;
+        }
+        .matched {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .score {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        .timer {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Memoria</h1>
+    <div class="score" id="score">Puntaje: 0</div>
+    <div class="timer" id="timer">Tiempo: 0</div>
+    <div class="board" id="board"></div>
+    <script>
+        const cardValues = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+        let flippedCards = [];
+        let matchedCards = [];
+        let score = 0;
+        let time = 0;
+        let timerInterval;
+
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function startGame() {
+            const shuffledCards = shuffle([...cardValues]);
+            const board = document.getElementById('board');
+            board.innerHTML = '';
+            shuffledCards.forEach(value => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.dataset.value = value;
+                card.addEventListener('click', flipCard);
+                board.appendChild(card);
+            });
+            score = 0;
+            time = 0;
+            document.getElementById('score').textContent = `Puntaje: ${score}`;
+            document.getElementById('timer').textContent = `Tiempo: ${time}`;
+            clearInterval(timerInterval);
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function flipCard(event) {
+            const card = event.target;
+            if (flippedCards.length < 2 && !card.classList.contains('flipped') && !card.classList.contains('matched')) {
+                card.classList.add('flipped');
+                card.textContent = card.dataset.value;
+                flippedCards.push(card);
+
+                if (flippedCards.length === 2) {
+                    checkMatch();
+                }
+            }
+        }
+
+        function checkMatch() {
+            if (flippedCards[0].dataset.value === flippedCards[1].dataset.value) {
+                flippedCards[0].classList.add('matched');
+                flippedCards[1].classList.add('matched');
+                score += 10;
+                document.getElementById('score').textContent = `Puntaje: ${score}`;
+                matchedCards.push(...flippedCards);
+            } else {
+                setTimeout(() => {
+                    flippedCards[0].classList.remove('flipped');
+                    flippedCards[1].classList.remove('flipped');
+                    flippedCards[0].textContent = '';
+                    flippedCards[1].textContent = '';
+                }, 1000);
+            }
+            flippedCards = [];
+
+            if (matchedCards.length === cardValues.length) {
+                clearInterval(timerInterval);
+                alert('¡Juego completado!');
+            }
+        }
+
+        function updateTimer() {
+            time++;
+            document.getElementById('timer').textContent = `Tiempo: ${time}`;
+        }
+
+        startGame();
+    </script>
+</body>
+</html>
