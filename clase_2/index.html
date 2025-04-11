@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo POO en JavaScript</title>
+</head>
+
+<body>
+    <h1>Programación Orientada a Objetos - JavaScript</h1>
+    <div id="salida"></div>
+
+    <script>
+        // Clase base: Animal
+        class Animal {
+            // El constructor define las propiedades iniciales del objeto
+            constructor(nombre, sonido) {
+                this.nombre = nombre;     // propiedad nombre
+                this.sonido = sonido;     // propiedad sonido
+            }
+
+            // Método que devuelve cómo suena el animal
+            hacerSonido() {
+                return `${this.nombre} dice: ${this.sonido}`;
+            }
+        }
+
+        // Clase derivada: Perro (hereda de Animal)
+        class Perro extends Animal {
+            constructor(nombre, raza) {
+                super(nombre, "guau"); // usamos 'super' para llamar al constructor de la clase base
+                this.raza = raza;
+            }
+
+            // Método adicional exclusivo de Perro
+            correr() {
+                return `${this.nombre}, el ${this.raza}, está corriendo feliz.`;
+            }
+        }
+
+        // Crear una instancia (objeto) de Perro
+        const miPerro = new Perro("Max", "Labrador");
+
+        // Mostrar resultados en pantalla
+        const salida = document.getElementById("salida");
+        salida.innerHTML = `
+      <p>${miPerro.hacerSonido()}</p>
+      <p>${miPerro.correr()}</p>
+    `;
+
+        /*
+          ✅ Conceptos explicados:
+          - Clase: Es un molde para crear objetos.
+          - Objeto: Instancia de una clase, con propiedades y métodos.
+          - Herencia: Una clase puede extender otra para reutilizar código.
+          - Métodos: Funciones definidas dentro de las clases.
+          - Encapsulamiento: Las propiedades están dentro del objeto y no son globales.
+        */
+    </script>
+</body>
+
+</html>
