@@ -39,21 +39,14 @@ Los lenguajes de programación son herramientas que nos permiten dar instruccion
 - **Variables**: Son espacios en la memoria donde se almacenan valores. Cada variable tiene un tipo que define qué tipo de datos puede almacenar (números, texto, etc.).
 - **Estructuras de control**: Nos permiten tomar decisiones en nuestro código, como **if**, **for** y **while**.
 Curso de Scratch 3.0 desde cero🙀 Para principiantes: https://www.youtube.com/watch?v=a5DOIvjxiQ0
+
 ## Ejemplo básico en Python:
 ```python
 # Este es un ejemplo de un algoritmo simple en Python
 nombre = input("¿Cuál es tu nombre? ")
 print(f"Hola, {nombre}!")
 
-#### **Ejercicios prácticos (ejercicio_1_basico.py)**
-## Material de lectura
-- [PDF: Introducción a la Programación](material/tema_1_introduccion_a_la_programacion.pdf)
-
----
-Si tienes alguna duda o pregunta, no dudes en abrir un *issue* en este repositorio.
-¡Feliz aprendizaje y programación!
-Aquí puedes poner ejercicios para que los estudiantes practiquen:
-
+#### **Ejercicios práctico**
 ```python
 # Ejercicio 1: Escribe un programa que pida al usuario dos números y los sume
 
