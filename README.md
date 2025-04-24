@@ -41,6 +41,7 @@ Los lenguajes de programación son herramientas que nos permiten dar instruccion
 Curso de Scratch 3.0 desde cero🙀 Para principiantes: https://www.youtube.com/watch?v=a5DOIvjxiQ0
 ## Clase 4 Media
 - **https://taller.sgdls.cl/api-dbz/
+- **https://taller.sgdls.cl/api-tabla-periodica/
 
 ## Ejemplo básico en Python:
 ```python
