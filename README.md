@@ -62,4 +62,4 @@ suma = numero_1 + numero_2
 
 # Mostrar el resultado
 print(f"La suma de {numero_1} y {numero_2} es: {suma}")
-
+https://taller.sgdls.cl/tablero/
