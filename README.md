@@ -1,6 +1,6 @@
 # taller-programacion
 # Pensamiento Computacional y Programación
-
+# https://taller.sgdls.cl/tablero/
 Bienvenidos al taller de **Pensamiento Computacional y Programación**. Este repositorio contiene materiales educativos, ejemplos de código y ejercicios prácticos para ayudar a los estudiantes a desarrollar sus habilidades en programación y razonamiento lógico.
 
 ## Objetivos del taller
@@ -62,4 +62,4 @@ suma = numero_1 + numero_2
 
 # Mostrar el resultado
 print(f"La suma de {numero_1} y {numero_2} es: {suma}")
-https://taller.sgdls.cl/tablero/
+
